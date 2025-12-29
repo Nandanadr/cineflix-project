@@ -20,7 +20,7 @@ class MovieForm(forms.ModelForm):
             
             'name':forms.TextInput(attrs={'class':'form-control','placeholder':'Enter Movie name'}),
 
-            'photo':forms.FileInput(attrs={'class':'form-control',}),
+            'photo':forms.FileInput(attrs={'class':'form-control'}),
 
             'description':forms.TextInput(attrs={'class':'form-control','placeholder':'Enter Movie description','row':3}),
 

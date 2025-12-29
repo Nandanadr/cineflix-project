@@ -18,6 +18,8 @@ urlpatterns = [
 
     path('movie-delete/<str:uuid>/',views.MovieDeleteView.as_view(),name='movie-delete'),
 
+    path('movie-play/<str:uuid>/',views.PlayMovie.as_view(),name='movie-play'),
+
     
 
 ]

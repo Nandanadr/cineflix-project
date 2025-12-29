@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block section %}
+
+<section id="create-movie" class="py-5 my-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+
+        <div class="card shadow-lg border-0 rounded-4">
+          <div class="card-header bg-primary text-white text-center py-3">
+            <h3 class="mb-0">🎬 Create Subscription</h3>
+          </div>
+
+          <div class="card-body p-4">
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+
+              <!-- Movie Name -->
+              <div class="mb-3">
+                <label for="name" class="form-label fw-bold">Subscription Name</label>
+                <!-- <input type="text" id="name" name="name" class="form-control" placeholder="Enter movie name" required> -->
+
+                {{form.name}}
+                {% if form.name.errors %}
+                <p class="text-danger small">{{form.name.errors.0}}</p>
+                {% endif %}
+              </div>
+
+            
+
+              <!-- Description -->
+              <div class="mb-3">
+                <label for="amount" class="form-label fw-bold">Amount</label>
+                <!-- <textarea id="description" name="description" class="form-control" rows="3" placeholder="Enter movie description" required></textarea> -->
+                 {{form.amount}}
+                   {% if form.amount.errors %}
+                <p class="text-danger small">{{form.amount.errors.0}}</p>
+                {% endif %}
+              </div>
+
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="devices" class="form-label fw-bold">Devices</label>
+                  <!-- <input type="date" id="release_date" name="release_date" class="form-control" required> -->
+                   {{form.devices}}
+                     {% if form.devices.errors %}
+                <p class="text-danger small">{{form.devices.errors.0}}</p>
+                {% endif %}
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label for="quality" class="form-label fw-bold">Quality</label>
+                  <!-- <input type="time" id="runtime" name="runtime" class="form-control" required> -->
+                   {{form.quality}}
+                     {% if form.quality.errors %}
+                <p class="text-danger small">{{form.quality.errors.0}}</p>
+                {% endif %}
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label for="no_of_screens" class="form-label fw-bold">No_of_screens</label>
+          
+                   {{form.no_of_screens}}
+                     {% if form.no_of_screens.errors %}
+                <p class="text-danger small">{{form.no_of_screens.errors.0}}</p>
+                {% endif %}
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="download_devices" class="form-label fw-bold">Download_Devices</label>
+            
+                   {{form.download_devices}}
+                     {% if form.download_devices.errors %}
+                <p class="text-danger small">{{form.download_devices.errors.0}}</p>
+                {% endif %}
+                </div>
+
+                 
+
+              <div class="d-flex justify-content-end mt-4 btn-wrap">
+                <button type="submit" class="btn btn-outline-accent btn-accent-arrow">
+                  Save  <i class="icon icon-ns-arrow-right"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
